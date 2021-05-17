@@ -13,5 +13,5 @@ jobs:
        with:
         tag: "v1.0.0"
         #commit: GITHUB_REF
-        bodyFile: "- Testing"
+        body: "- Testing"
         token: ${{ secrets.GITHUB_TOKEN }}
