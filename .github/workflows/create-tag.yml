@@ -12,6 +12,6 @@ jobs:
        uses: ncipollo/release-action@v1
        with:
         #artifacts: "v1"
-        commit: ${{GITHUB_SHA}}
+        commit: GITHUB_SHA
         bodyFile: "- Testing"
         token: ${{ secrets.GITHUB_TOKEN }}
