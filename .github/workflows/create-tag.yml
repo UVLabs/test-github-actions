@@ -12,7 +12,7 @@ jobs:
        id: set-tag
        run:  echo '::set-output name=tag::sh cut.sh'
      - name: Output tags
-       run: steps.set-tag.outputs.tag 
+       run: ${{ steps.set-tag.outputs.tag }}
     #  - name: Create release
     #    uses: ncipollo/release-action@v1
     #    with:
