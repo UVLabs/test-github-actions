@@ -2,3 +2,15 @@ name: Create Tag
 
 on: push
 
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout Code
+       uses: actions/checkout@v2
+     - name: Create release
+       uses: ncipollo/release-action@v1
+       with:
+        artifacts: ""
+        bodyFile: "- Testing"
+        token: ${{ secrets.GITHUB_TOKEN }}
