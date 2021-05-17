@@ -11,7 +11,7 @@ jobs:
      - name: Create release
        uses: ncipollo/release-action@v1
        with:
-        #artifacts: "v1.0.0"
+        tag: "v1.0.0"
         #commit: GITHUB_REF
         bodyFile: "- Testing"
         token: ${{ secrets.GITHUB_TOKEN }}
