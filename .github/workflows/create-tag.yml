@@ -1,6 +1,9 @@
 name: Create Tag
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   create-tag:
@@ -8,6 +11,19 @@ jobs:
     steps:
      - name: Checkout Code
        uses: actions/checkout@v2
+     - name: Setup PHP
+       uses: shivammathur/setup-php@v2
+       with: 
+          php-version: '7.2'
+     - name: PHP Work
+       id: set-output
+       env: 
+        COMMITTEXT: "${{ github.event.head_commit.message }}"
+       run: |
+          OUTPUT=$(php bin/get-commit-message.php)
+          echo ${OUTPUT}
+          echo "after"
+          echo "::set-output name=release_body::${OUTPUT}"
      - name: Set tag
        id: set-tag
        run:  echo "::set-output name=tag_name::$(sh cut.sh)"
@@ -33,5 +49,5 @@ jobs:
        with:
         tag: ${{ steps.set-tag.outputs.tag_name }}
         #commit: GITHUB_REF
-        body: "- Testing 2"
+        body: ${{ steps.set-output.outputs.release_body }}
         token: ${{ secrets.GITHUB_TOKEN }}
