@@ -25,8 +25,8 @@ $newstr = '';
 
 putenv("RELEASEBODY=$newstr");
 // echo $newstr;
-print_r($a);
-echo "after";
+// print_r($a);
+// echo "after";
 echo $a[1];
 // return $newstr;
 // $result = putenv("RELEASEBODY=$newstr");
