@@ -24,7 +24,10 @@ $b = $a[1];
 
 $c = explode("\n", $b);
 
-print_r($c);
+$d = implode( "<br>", $c );
+
+// print_r($c);
+print_r($d);
 
 
 // $newstr = rtrim($newstr, '\\');
