@@ -2,55 +2,22 @@
 
 $commit_message = getenv("COMMITTEXT");
 
-// $str = "Merge pull request #41 from UVLabs/master
+// Merge commit message has two new lines after title, this is set automatically by Github
+$commit_message_parts = explode("\n\n", $commit_message);
 
-// test1
-// test2
-// test3";
+// Get everything after the commit message title
+$commit_message_body = $commit_message_parts[1];
 
-// $a = explode("\n", $str);
-// $a = explode("\n", $commit_message);
-$a = explode("\n\n", $commit_message);
+// Push commit message body (fix,changes etc ) into an array for formatting
+$commit_message_body_lines = explode("\n", $commit_message_body);
 
-$newstr = '';
+$release_notes = '';
 
-// foreach($a as $key => $value){
-//     // Commit message always starts after 2 '\n\n' characters
-//     if( $key >= 2 ){
-//     $newstr .= $value;
-//     }
-// }
-$b = $a[1];
-
-$c = explode("\n", $b);
-
-// $d = implode( "<br>", $c );
-// echo json_encode($c);
-
-foreach( $c as $c){
-    $newstr .= '* ' . $c . PHP_EOL;
+foreach( $commit_message_body_lines as $commit_message_body_line ){
+    // Format markdown
+    $release_notes .= '* ' . $commit_message_body_line . PHP_EOL;
 }
 
-file_put_contents('release.txt', $newstr);
+// Write to file
+file_put_contents('release_notes.txt', $release_notes);
 exit;
-
-// print_r($c);
-// print_r($d);
-
-$d = json_encode($newstr);
-$e = str_replace('\r', '<br />', $d  );
-
-// $newstr = rtrim($newstr, '\\');
-
-// putenv("RELEASEBODY=$newstr");
-// echo json_encode($newstr);
-
-echo str_replace('"', '', $e);
-// echo $e;
-
-// print_r($a);
-// echo "after";
-// echo $a[1];
-// return $newstr;
-// $result = putenv("RELEASEBODY=$newstr");
-// print_r($result);
