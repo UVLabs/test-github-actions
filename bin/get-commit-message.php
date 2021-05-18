@@ -28,15 +28,17 @@ $c = explode("\n", $b);
 // echo json_encode($c);
 
 foreach( $c as $c){
-    $newstr .= '* ' . $c;
+    $newstr .= '* ' . $c . PHP_EOL;
 }
+
+file_put_contents('release.txt', $newstr);
+exit;
 
 // print_r($c);
 // print_r($d);
 
 $d = json_encode($newstr);
-
-$e = str_replace('\r', '', nl2br($d) );
+$e = str_replace('\r', '<br />', $d  );
 
 // $newstr = rtrim($newstr, '\\');
 
