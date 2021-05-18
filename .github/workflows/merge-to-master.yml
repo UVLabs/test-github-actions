@@ -21,8 +21,19 @@ jobs:
            COMMITTEXT: ${{ github.event.head_commit.message }}
         run: |
           php bin/get-commit-message.php
-          exit 1
+# exit 1
 # php -r "print_r(getenv());"
+      - name: Stored ENVs
+        run: |
+          echo $RELEASEBODY
+      - name: Set Output ENV
+        id: set-output
+        run:  |
+          echo "::set-output name=release_body::$RELEASEBODY"
+      - name: Echo Output ENV
+        run: |
+          ${{ steps.set-output.outputs.release_body }}
+          exit 1
       - name: Create Output
         id: create-output
         env: 
