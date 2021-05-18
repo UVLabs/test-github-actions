@@ -20,6 +20,12 @@ $newstr = '';
 //     $newstr .= $value;
 //     }
 // }
+$b = $a[1];
+
+$c = explode("\n", $b);
+
+print_r($c);
+
 
 // $newstr = rtrim($newstr, '\\');
 
@@ -27,7 +33,7 @@ putenv("RELEASEBODY=$newstr");
 // echo $newstr;
 // print_r($a);
 // echo "after";
-echo $a[1];
+// echo $a[1];
 // return $newstr;
 // $result = putenv("RELEASEBODY=$newstr");
 // print_r($result);
