@@ -161,7 +161,7 @@ function run_rop() {
 	define( 'ROP_CRON_ALTERNATIVE', $use_remote_cron );
 
 	define( 'ROP_PRO_URL', 'http://revive.social/plugins/revive-old-post/' );
-	define( 'ROP_LITE_VERSION', '1.0.3');
+	define( 'ROP_LITE_VERSION', '2.0.0');
 	define( 'ROP_LITE_BASE_FILE', __FILE__ );
 	$debug = false;
 	if ( function_exists( 'wp_get_environment_type' ) ) {
