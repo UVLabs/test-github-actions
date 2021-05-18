@@ -1,16 +1,20 @@
 #!/bin/bash
-INPUT='Merge pull request #3 from UVLabs/master TESTING\n\nYet another test'
+INPUT='Merge pull request #8 from UVLabs/master\n\ntest\r\ntest'
+# INPUT='Merge pull request #3 from UVLabs/master TESTING\n\nYet another test'
 # echo -e $INPUT
 # printf $INPUT
 # printf -v TEST $INPUT
-printf -v TEST '%q ' $INPUT
+# printf  "%s\n" "${INPUT#*master }"
+# printf -v TEST '%q ' "${INPUT#*'master' }"
+# printf -v TEST '%q ' $INPUT
 # searchstr="\n\n"
 # temp=${TEST#*$searchstr}
 # echo -E $INPUT
 # echo -E Merge pull request 3 from UVLabs/master TESTING\n\nYet another test
 #SUBSTRING=$(echo $INPUT | cut -d "n" )
-echo $TEST
-# echo $temp
+echo $INPUT | tail -n +3
+
+# echo ${TEST:4}
 
 # echo '${TEST##*\n\n}'
 
