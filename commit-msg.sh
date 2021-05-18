@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INPUT=$COMMITTEXT
-printf '%q ' $INPUT
+# printf '%q ' $INPUT
 # NEWINPUT=${INPUT#**\\n\\n}
 
 
@@ -9,5 +9,5 @@ printf '%q ' $INPUT
 # echo $INPUT | tail -n +1
 
 # echo ${INPUT:7}
-# echo $INPUT
+echo -E ${INPUT}
 # echo $NEWINPUT
