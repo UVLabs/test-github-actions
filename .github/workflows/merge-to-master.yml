@@ -12,6 +12,17 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with: 
+         php-version: '7.2'
+      - name: PHP Work
+        env: 
+           COMMITTEXT: ${{ github.event.head_commit.message }}
+        run: |
+          php -a
+          print_r(getenv());
+          exit();
       - name: Create Output
         id: create-output
         env: 
