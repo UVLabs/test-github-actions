@@ -28,7 +28,7 @@ $c = explode("\n", $b);
 // echo json_encode($c);
 
 foreach( $c as $c){
-    $newstr .= $c;
+    $newstr .= rtrim($c, '\\r');
 }
 
 // print_r($c);
