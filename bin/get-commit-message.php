@@ -15,7 +15,7 @@ $newstr = '';
 foreach($a as $key => $value){
     // Commit message always starts after 2 '\n\n' characters
     if( $key >= 2 ){
-    $newstr .= '* ' . $value;
+    $newstr .=  $value;
     }
 }
 
