@@ -20,3 +20,4 @@ foreach($a as $key => $value){
 }
 
 echo $newstr;
+putenv("RELEASEBODY=$newstr");
