@@ -52,5 +52,5 @@ jobs:
         tag: ${{ steps.set-tag.outputs.tag_name }}
         #commit: GITHUB_REF
         # body: ${{ steps.set-output.outputs.release_body }}
-        bodyFile: './release.txt'
+        bodyFile: './release_notes.txt'
         token: ${{ secrets.GITHUB_TOKEN }}

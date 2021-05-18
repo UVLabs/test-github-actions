@@ -22,7 +22,7 @@ jobs:
            COMMITTEXT: "${{ github.event.head_commit.message }}"
         run: |
           OUTPUT=$(php bin/get-commit-message.php)
-          echo "::set-output name=release_body::$(cat release.txt)"
+          echo "::set-output name=release_body::$(cat release_notes.txt)"
 # echo "::set-output name=release_body::${OUTPUT}"
 # echo ${OUTPUT}
 # echo "after"
