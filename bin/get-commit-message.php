@@ -25,7 +25,7 @@ $b = $a[1];
 $c = explode("\n", $b);
 
 // $d = implode( "<br>", $c );
-echo json_encode($c);
+// echo json_encode($c);
 
 foreach( $c as $c){
     $newstr .= $c;
