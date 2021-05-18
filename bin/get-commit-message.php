@@ -20,6 +20,6 @@ foreach($a as $key => $value){
 }
 
 putenv("RELEASEBODY=$newstr");
-echo $newstr;
+return $newstr;
 // $result = putenv("RELEASEBODY=$newstr");
 // print_r($result);
