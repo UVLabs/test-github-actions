@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Logging
         run: |
-          chmod +x commit-msg.sh
-          sh commit-msg.sh '${{github.event.head_commit.message}}'
+          sh commit-msg.sh "${{github.event.head_commit.message}}"
+#chmod +x commit-msg.sh
 #  echo $(${{github.event.head_commit.message}} | tail -n +3)
 # printf -v TEST '%q ' '${{github.event.head_commit.message}}'
 ## echo $TEST
