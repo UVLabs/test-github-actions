@@ -21,7 +21,7 @@ jobs:
         COMMITTEXT: "${{ github.event.head_commit.message }}"
        run: |
           php bin/get-commit-message.php
-          echo "::set-output name=release_body::$(cat release.txt)"
+# echo "::set-output name=release_body::$(cat release.txt)"
 # OUTPUT=$(php bin/get-commit-message.php)
 # echo ${OUTPUT}
 # echo "after"
@@ -51,5 +51,6 @@ jobs:
        with:
         tag: ${{ steps.set-tag.outputs.tag_name }}
         #commit: GITHUB_REF
-        body: ${{ steps.set-output.outputs.release_body }}
+        # body: ${{ steps.set-output.outputs.release_body }}
+        bodyFile: './release.txt'
         token: ${{ secrets.GITHUB_TOKEN }}
