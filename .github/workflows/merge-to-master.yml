@@ -14,10 +14,13 @@ jobs:
         uses: actions/checkout@v2
       - name: Create Output
         id: create-output
+        env: 
+           COMMITTEXT: ${{ github.event.head_commit.message }}
         run: |
-          msg="$(jq '.head_commit.message' $GITHUB_EVENT_PATH)" 
-          echo ::set-output name=commit_msg::${msg##*\\n} | tr -d '"'
+         echo "::set-output name=commit_msg::$(sh commit-msg.sh)"
 
+# msg="$(jq '.head_commit.message' $GITHUB_EVENT_PATH)" 
+# echo ::set-output name=commit_msg::${msg##*\\n} | tr -d '"'
 #msg=${{github.event.head_commit.message}}
       - name: Logging
         run: echo ${{ steps.create-output.outputs.commit_msg }}
