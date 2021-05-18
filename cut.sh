@@ -16,6 +16,8 @@
 
 # echo ${TEST:4}
 
+# echo ${INPUT##*\\n}
+
 # echo '${TEST##*\n\n}'
 
 # # // Working
