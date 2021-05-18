@@ -23,7 +23,7 @@ jobs:
         run: |
           OUTPUT=$(php bin/get-commit-message.php)
           echo "::set-output name=release_body::${OUTPUT}"
-          ls
+          cat release.txt
 # echo ${OUTPUT}
 # echo "after"
 # exit 1
