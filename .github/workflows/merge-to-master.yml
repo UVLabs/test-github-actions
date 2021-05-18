@@ -19,7 +19,7 @@ jobs:
       - name: PHP Work
         id: set-output
         env: 
-           COMMITTEXT: ${{ github.event.head_commit.message }}
+           COMMITTEXT: "${{ github.event.head_commit.message }}"
         run: |
           OUTPUT=$(php bin/get-commit-message.php)
           echo ${OUTPUT}
