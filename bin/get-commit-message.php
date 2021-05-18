@@ -24,16 +24,20 @@ $b = $a[1];
 
 $c = explode("\n", $b);
 
-$d = implode( "<br>", $c );
+// $d = implode( "<br>", $c );
+
+foreach( $c as $c){
+    $newstr .= $c;
+}
 
 // print_r($c);
-print_r($d);
+// print_r($d);
 
 
 // $newstr = rtrim($newstr, '\\');
 
 putenv("RELEASEBODY=$newstr");
-// echo $newstr;
+echo $newstr;
 // print_r($a);
 // echo "after";
 // echo $a[1];
