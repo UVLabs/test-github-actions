@@ -25,11 +25,13 @@ jobs:
 # php -r "print_r(getenv());"
       - name: Stored ENVs
         run: |
-          echo "$RELEASEBODY"
+          printenv
+#echo "$RELEASEBODY"
       - name: Set Output ENV
         id: set-output
         run:  |
-          echo "::set-output name=release_body::$($RELEASEBODY)"
+          bash
+          echo "::set-output name=release_body::$RELEASEBODY"
       - name: Echo Output ENV
         run: |
           ${{ steps.set-output.outputs.release_body }}
