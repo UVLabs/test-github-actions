@@ -28,7 +28,7 @@ $c = explode("\n", $b);
 // echo json_encode($c);
 
 foreach( $c as $c){
-    $newstr .= $c;
+    $newstr .= '* ' . $c;
 }
 
 // print_r($c);
@@ -43,7 +43,8 @@ $e = str_replace('\r', '<br>', $d );
 // putenv("RELEASEBODY=$newstr");
 // echo json_encode($newstr);
 
-echo $e;
+echo str_replace('"', '', $e);
+// echo $e;
 
 // print_r($a);
 // echo "after";
