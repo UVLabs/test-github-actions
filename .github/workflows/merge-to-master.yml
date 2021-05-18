@@ -30,11 +30,10 @@ jobs:
       - name: Set Output ENV
         id: set-output
         run:  |
-          echo "::set-output name=release_body::$( php bin/get-commit-message.php)"
+          echo "::set-output name=release_body::$(php bin/get-commit-message.php)"
       - name: Echo Output ENV
         run: |
           ${{ steps.set-output.outputs.release_body }}
-          exit 1
       - name: Create Output
         id: create-output
         env: 
