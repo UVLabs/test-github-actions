@@ -17,7 +17,8 @@ jobs:
         env: 
            COMMITTEXT: ${{ github.event.head_commit.message }}
         run: |
-          echo "${{ github.event.commits[0].message }}"
+          echo "${{ github.event.commits }}"
+#echo "${{ github.event.commits[0].message }}"
 #echo ${{ toJson(github) }}
       - name: Create Output 2
         id: create-output2
