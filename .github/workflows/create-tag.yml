@@ -29,7 +29,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             //  ref: "refs/tags/1.0.1",
-             ref: "refs/tags/" + ${{ steps.set-tag.outputs.tag }},
+             ref: "refs/tags/${{ steps.set-tag.outputs.tag }}",
               //ref: ref.concat(tag),
               sha: context.sha
             })
