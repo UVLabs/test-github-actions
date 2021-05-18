@@ -1,4 +1,4 @@
-name: Create Tag
+name: Export Events
 
 on:
   push:
