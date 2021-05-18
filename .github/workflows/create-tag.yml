@@ -20,10 +20,12 @@ jobs:
        env: 
         COMMITTEXT: "${{ github.event.head_commit.message }}"
        run: |
-          OUTPUT=$(php bin/get-commit-message.php)
-          echo ${OUTPUT}
-          echo "after"
-          echo "::set-output name=release_body::${OUTPUT}"
+          php bin/get-commit-message.php
+          echo "::set-output name=release_body::$(cat release.txt)"
+# OUTPUT=$(php bin/get-commit-message.php)
+# echo ${OUTPUT}
+# echo "after"
+# echo "::set-output name=release_body::${OUTPUT}"
      - name: Set tag
        id: set-tag
        run:  echo "::set-output name=tag_name::$(sh cut.sh)"
