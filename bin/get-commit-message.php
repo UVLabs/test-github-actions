@@ -1,6 +1,6 @@
 <?php
 
-$commit_message = getenv('COMMITTEXT');
+$commit_message = getenv("COMMITTEXT");
 
 // $str = "Merge pull request #41 from UVLabs/master
 
