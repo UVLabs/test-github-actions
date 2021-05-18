@@ -25,6 +25,7 @@ $b = $a[1];
 $c = explode("\n", $b);
 
 // $d = implode( "<br>", $c );
+echo json_encode($c);
 
 foreach( $c as $c){
     $newstr .= $c;
@@ -36,8 +37,8 @@ foreach( $c as $c){
 
 // $newstr = rtrim($newstr, '\\');
 
-putenv("RELEASEBODY=$newstr");
-echo $newstr;
+// putenv("RELEASEBODY=$newstr");
+echo json_encode($newstr);
 // print_r($a);
 // echo "after";
 // echo $a[1];
