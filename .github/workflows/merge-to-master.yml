@@ -31,7 +31,7 @@ jobs:
         id: set-output
         run:  |
           bash
-          echo "::set-output name=release_body::$RELEASEBODY"
+          echo "::set-output name=release_body::$( php bin/get-commit-message.php)"
       - name: Echo Output ENV
         run: |
           ${{ steps.set-output.outputs.release_body }}
