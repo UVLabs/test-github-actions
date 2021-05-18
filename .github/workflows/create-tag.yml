@@ -1,4 +1,4 @@
-name: Create Tag
+name: Create Release
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 jobs:
   create-tag:
     runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, 'release')
     steps:
      - name: Checkout Code
        uses: actions/checkout@v2
@@ -39,7 +40,6 @@ jobs:
        with:
           github-token: ${{ github.token }}
           script: |
-           // console.log( process.env)
             github.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -50,7 +50,5 @@ jobs:
        uses: ncipollo/release-action@v1
        with:
         tag: ${{ steps.set-tag.outputs.tag_name }}
-        #commit: GITHUB_REF
-        # body: ${{ steps.set-output.outputs.release_body }}
         bodyFile: './release_notes.txt'
         token: ${{ secrets.GITHUB_TOKEN }}
