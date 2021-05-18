@@ -12,6 +12,6 @@ jobs:
     steps:
       - name: Logging
         run: |
-          echo "${{toJSON(github.event)}}"
-          echo "\n\n"
+          # echo "${{toJSON(github.event)}}"
+          # echo "\n\n"
           echo "${{toJSON(github.event.head_commit.message)}}"
