@@ -16,7 +16,7 @@ jobs:
         id: create-output
         run: |
           msg="$(jq '.head_commit.message' $GITHUB_EVENT_PATH)" 
-          echo "::set-output name=commit_msg::${msg##*\\n} | tr -d '"' "
+          echo ::set-output name=commit_msg::${msg##*\\n} | tr -d '"'
 
 #msg=${{github.event.head_commit.message}}
       - name: Logging
