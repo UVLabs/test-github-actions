@@ -12,9 +12,12 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+      - name: Create Output
+        id: create-output
+        run: echo "::set-output name=commit_msg::$(sh commit-msg.sh ${{github.event.head_commit.message}})"
       - name: Logging
-        run: |
-          sh commit-msg.sh "${{github.event.head_commit.message}}"
+        run: echo ${{ steps.create-output.outputs.commit_msg }}
+#sh commit-msg.sh "${{github.event.head_commit.message}}"
 #chmod +x commit-msg.sh
 #  echo $(${{github.event.head_commit.message}} | tail -n +3)
 # printf -v TEST '%q ' '${{github.event.head_commit.message}}'
