@@ -23,7 +23,10 @@ jobs:
         # env: 
         #    COMMITTEXT: ${{ github.event.head_commit.message }}
         run: |
-          echo ${{ toJson(github.event.head_commit.message) }}
+          echo "${{ toJson(github.event.head_commit.message) }}"
+          echo "${{ toJson(github.event) }}"
+          echo "${{ github.event.commits[0].message }}"
+          
 #echo "::set-output name=commit_msg::$(sh commit-msg.sh)"
 
 # msg="$(jq '.head_commit.message' $GITHUB_EVENT_PATH)" 
