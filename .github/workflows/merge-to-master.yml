@@ -12,6 +12,5 @@ jobs:
     steps:
       - name: Logging
         run: |
-          # echo -E '${{github.event.head_commit.message}}'
           printf -v TEST '%q ' '${{github.event.head_commit.message}}'
           echo $TEST
