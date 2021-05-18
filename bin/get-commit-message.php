@@ -36,7 +36,7 @@ foreach( $c as $c){
 
 $d = json_encode($newstr);
 
-$e = str_replace('\r', '<br>' . PHP_EOL, $d );
+$e = str_replace('\r', '', nl2br($d) );
 
 // $newstr = rtrim($newstr, '\\');
 
