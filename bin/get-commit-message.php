@@ -15,13 +15,14 @@ $newstr = '';
 foreach($a as $key => $value){
     // Commit message always starts after 2 '\n\n' characters
     if( $key >= 2 ){
-    $newstr .=  $value;
+    $newstr .= $value;
     }
 }
 
 // $newstr = rtrim($newstr, '\\');
 
 putenv("RELEASEBODY=$newstr");
-echo $newstr;
+return $newstr;
+// echo $newstr;
 // $result = putenv("RELEASEBODY=$newstr");
 // print_r($result);
