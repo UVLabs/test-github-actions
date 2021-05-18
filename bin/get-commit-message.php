@@ -10,21 +10,22 @@ $commit_message = getenv("COMMITTEXT");
 
 // $a = explode("\n", $str);
 // $a = explode("\n", $commit_message);
-$a = explode("\r\n", $commit_message);
+$a = explode("\n\n", $commit_message);
 
 $newstr = '';
 
-foreach($a as $key => $value){
-    // Commit message always starts after 2 '\n\n' characters
-    if( $key >= 2 ){
-    $newstr .= $value;
-    }
-}
+// foreach($a as $key => $value){
+//     // Commit message always starts after 2 '\n\n' characters
+//     if( $key >= 2 ){
+//     $newstr .= $value;
+//     }
+// }
 
 // $newstr = rtrim($newstr, '\\');
 
 putenv("RELEASEBODY=$newstr");
-echo $newstr;
+// echo $newstr;
+print_r($a);
 // return $newstr;
 // $result = putenv("RELEASEBODY=$newstr");
 // print_r($result);
