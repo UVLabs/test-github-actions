@@ -17,7 +17,14 @@ jobs:
         env: 
            COMMITTEXT: ${{ github.event.head_commit.message }}
         run: |
-         echo "::set-output name=commit_msg::$(sh commit-msg.sh)"
+          echo ${{ toJson(github) }}
+      - name: Create Output 2
+        id: create-output2
+        # env: 
+        #    COMMITTEXT: ${{ github.event.head_commit.message }}
+        run: |
+          echo ${{ toJson(github.event.head_commit.message) }}
+#echo "::set-output name=commit_msg::$(sh commit-msg.sh)"
 
 # msg="$(jq '.head_commit.message' $GITHUB_EVENT_PATH)" 
 # echo ::set-output name=commit_msg::${msg##*\\n} | tr -d '"'
