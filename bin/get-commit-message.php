@@ -28,17 +28,23 @@ $c = explode("\n", $b);
 // echo json_encode($c);
 
 foreach( $c as $c){
-    $newstr .= rtrim($c, '\\r');
+    $newstr .= $c;
 }
 
 // print_r($c);
 // print_r($d);
 
+$d = json_encode($newstr);
+
+$e = str_replace('\r', '<br>', $d );
 
 // $newstr = rtrim($newstr, '\\');
 
 // putenv("RELEASEBODY=$newstr");
-echo json_encode($newstr);
+// echo json_encode($newstr);
+
+echo $e;
+
 // print_r($a);
 // echo "after";
 // echo $a[1];
