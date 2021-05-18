@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Logging
         run: |
-          echo -E 'github.event.head_commit.message'
+          echo -E "${{github.event.head_commit.message}}"
