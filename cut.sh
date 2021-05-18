@@ -5,7 +5,7 @@
 # printf -v TEST $INPUT
 # printf  "%s\n" "${INPUT#*master }"
 # printf -v TEST '%q ' "${INPUT#*'master' }"
-# printf -v TEST '%q ' $INPUT
+# printf '%q ' $INPUT
 # searchstr="\n\n"
 # temp=${TEST#*$searchstr}
 # echo -E $INPUT
