@@ -29,8 +29,9 @@ jobs:
 #echo "$RELEASEBODY"
       - name: Set Output ENV
         id: set-output
-        shell: bash
-        run: echo "::set-output name=release_body::$(php bin/get-commit-message.php)"
+        env: 
+          COMMITTEXT: ${{ github.event.head_commit.message }}
+        run: echo "::set-output name=release_body::`php bin/get-commit-message.php`"
       - name: Echo Output ENV
         run: |
           ${{ steps.set-output.outputs.release_body }}
