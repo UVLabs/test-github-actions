@@ -20,9 +20,8 @@ jobs:
         env: 
            COMMITTEXT: ${{ github.event.head_commit.message }}
         run: |
-          php -a
-          print_r(getenv());
-          exit();
+          php -r "print_r(getenv());"
+          exit 1
       - name: Create Output
         id: create-output
         env: 
