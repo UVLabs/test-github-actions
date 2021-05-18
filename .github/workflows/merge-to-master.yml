@@ -10,6 +10,8 @@ jobs:
     name: "LOG Everything on GitHub Event"
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
       - name: Logging
         run: |
           chmod +x commit-msg.sh
