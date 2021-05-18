@@ -1,5 +1,5 @@
 #!/bin/bash
-INPUT='Merge pull request #8 from UVLabs/master\n\ntest\r\ntest'
+# INPUT='Merge pull request #8 from UVLabs/master\n\ntest\r\ntest'
 # INPUT='Merge pull request #3 from UVLabs/master TESTING\n\nYet another test'
 # echo -e $INPUT
 # printf $INPUT
@@ -12,13 +12,13 @@ INPUT='Merge pull request #8 from UVLabs/master\n\ntest\r\ntest'
 # echo -E $INPUT
 # echo -E Merge pull request 3 from UVLabs/master TESTING\n\nYet another test
 #SUBSTRING=$(echo $INPUT | cut -d "n" )
-echo $INPUT | tail -n +3
+# echo $INPUT | tail -n +3
 
 # echo ${TEST:4}
 
 # echo '${TEST##*\n\n}'
 
 # # // Working
-# INPUT=$(grep ROP_LITE_VERSION tweet-old-post.php)
-# SUBSTRING=$(echo $INPUT| cut -d "'" -f 4 )
-# echo v$SUBSTRING
+INPUT=$(grep ROP_LITE_VERSION tweet-old-post.php)
+SUBSTRING=$(echo $INPUT| cut -d "'" -f 4 )
+echo v$SUBSTRING
