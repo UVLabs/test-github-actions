@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  create-tag:
+  create-release:
     runs-on: ubuntu-latest
     if: contains(github.event.head_commit.message, 'release')
     steps:
@@ -25,9 +25,9 @@ jobs:
      - name: Set tag
        id: set-tag
        run:  echo "::set-output name=tag_name::$(sh cut.sh)"
-     - name: Output tags
-       continue-on-error: true
-       run: ${{ steps.set-tag.outputs.tag_name }}
+    #  - name: Output tags
+    #    continue-on-error: true
+    #    run: ${{ steps.set-tag.outputs.tag_name }}
      - name: Create tag
        uses: actions/github-script@v3
        env:
@@ -46,4 +46,5 @@ jobs:
        with:
         tag: ${{ steps.set-tag.outputs.tag_name }}
         bodyFile: './release_notes.txt'
+        owner: "Uriahs"
         token: ${{ secrets.GITHUB_TOKEN }}
