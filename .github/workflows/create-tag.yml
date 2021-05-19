@@ -22,7 +22,7 @@ jobs:
         COMMITTEXT: "${{ github.event.head_commit.message }}"
        run: |
           php bin/get-commit-message.php
-     - name: Set tag
+     - name: Set Tag Output
        id: set-tag
        run:  echo "::set-output name=tag_name::$(sh get-version.sh)"
     #  - name: Output tags
