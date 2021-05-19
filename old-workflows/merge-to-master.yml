@@ -64,8 +64,3 @@ jobs:
 #msg=${{github.event.head_commit.message}}
       - name: Logging
         run: echo ${{ steps.create-output.outputs.commit_msg }}
-#sh commit-msg.sh "${{github.event.head_commit.message}}"
-#chmod +x commit-msg.sh
-#  echo $(${{github.event.head_commit.message}} | tail -n +3)
-# printf -v TEST '%q ' '${{github.event.head_commit.message}}'
-### echo $TEST
