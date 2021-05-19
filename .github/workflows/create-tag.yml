@@ -16,11 +16,11 @@ jobs:
        uses: shivammathur/setup-php@v2
        with: 
           php-version: '7.4'
-     - name: Get Commit Message Body
+     - name: Create Release Notes File
        env: 
         COMMITTEXT: "${{ github.event.head_commit.message }}"
        run: |
-          php bin/get-commit-message.php
+          php bin/create-release-notes-file.php
      - name: Set Tag Output
        id: set-tag
        run:  echo "::set-output name=tag_name::$(sh get-version.sh)"
