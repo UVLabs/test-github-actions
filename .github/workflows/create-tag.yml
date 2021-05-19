@@ -24,7 +24,7 @@ jobs:
           php bin/get-commit-message.php
      - name: Set tag
        id: set-tag
-       run:  echo "::set-output name=tag_name::$(sh cut.sh)"
+       run:  echo "::set-output name=tag_name::$(sh get-version.sh)"
     #  - name: Output tags
     #    continue-on-error: true
     #    run: ${{ steps.set-tag.outputs.tag_name }}
@@ -46,5 +46,4 @@ jobs:
        with:
         tag: ${{ steps.set-tag.outputs.tag_name }}
         bodyFile: './release_notes.txt'
-        owner: "Uriahs"
         token: ${{ secrets.GITHUB_TOKEN }}
