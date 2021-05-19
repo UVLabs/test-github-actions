@@ -16,8 +16,7 @@ jobs:
        uses: shivammathur/setup-php@v2
        with: 
           php-version: '7.2'
-     - name: PHP Work
-       id: set-output
+     - name: Get Commit Message Body
        env: 
         COMMITTEXT: "${{ github.event.head_commit.message }}"
        run: |
