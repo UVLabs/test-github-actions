@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Main loader file
+ * Main loader file...
  *
  * This file is read by WordPress to generate the plugin information in the plugin
  * admin area. This file also includes all of the dependencies used by the plugin,
@@ -16,11 +16,11 @@
  * Plugin Name: Revive Old Posts
  * Plugin URI: https://revive.social/
  * Description: WordPress plugin that helps you to keeps your old posts alive by sharing them and driving more traffic to them from twitter/facebook or linkedin. It also helps you to promote your content. You can set time and no of posts to share to drive more traffic.For questions, comments, or feature requests, <a href="http://revive.social/support/?utm_source=plugindesc&utm_medium=announce&utm_campaign=top">contact </a> us!
- * Version:           9.0.1
+ * Version:           9.0.2
  * Author:            revive.social
  * Author URI:        https://revive.social/
  * Requires at least: 3.5
- * Tested up to:      5.7
+ * Tested up to:      5.10
  * Stable tag:        trunk
  * WordPress Available:  yes
  * Pro Slug:          tweet-old-post-pro
