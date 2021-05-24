@@ -1,3 +1,16 @@
+# [2.4.0](https://github.com/UVLabs/test-github-actions/compare/v2.3.0...v2.4.0) (2021-05-24)
+
+
+### Bug Fixes
+
+* order ([a7d9768](https://github.com/UVLabs/test-github-actions/commit/a7d976865aaf32388f8d9618a05c4773eaf105df))
+* test 5 ([6e4b1e9](https://github.com/UVLabs/test-github-actions/commit/6e4b1e9cc89a51eaddd6989ce82a05842037deef))
+
+
+### Features
+
+* added preset ([640cac1](https://github.com/UVLabs/test-github-actions/commit/640cac10d3cb637a696764ebbce069cde9b6c0ea))
+
 # [2.3.0](https://github.com/UVLabs/test-github-actions/compare/v2.2.0...v2.3.0) (2021-05-24)
 
 
