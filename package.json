@@ -1,8 +1,11 @@
 {
+  "name": "test-github-actions",
   "scripts": {
-    "release": "semantic-release --debug"
+    "release": "semantic-release --dry-run --no-ci"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "github:semantic-release/changelog",
     "semantic-release": "^17.4.3"
-  }
+  },
+  "dependencies": {}
 }
