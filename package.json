@@ -6,5 +6,5 @@
   "devDependencies": {
     "@semantic-release/changelog": "github:semantic-release/changelog",
     "semantic-release": "^17.4.3"
-  },
+  }
 }
