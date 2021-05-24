@@ -19,7 +19,7 @@
  * Version:           9.0.2
  * Author:            revive.social
  * Author URI:        https://revive.social/
- * Requires at least: 3.5
+ * Requires at least: 3.6
  * Tested up to:      5.9
  * Stable tag:        trunk
  * WordPress Available:  yes
