@@ -1,7 +1,7 @@
 {
   "name": "test-github-actions",
   "scripts": {
-    "release": "semantic-release --dry-run --no-ci"
+    "release": "semantic-release --no-ci"
   },
   "devDependencies": {
     "@semantic-release/changelog": "github:semantic-release/changelog",
